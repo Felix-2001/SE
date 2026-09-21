@@ -34,10 +34,14 @@ Initial requirements as user stories. Will be edited and extended later.
 **Player**
 - As a player, I want to roll dice against my Number and see my successes, so I don't have to count manually.
 - As a player, I want to be notified on a "Laser Feelings" result, so I remember to ask my bonus question.
+- As a player, I want to see my character's info (Style, Role, Number, gear) during play, so I can reference it quickly.
+- As a player, I want to indicate whether I'm rolling for Lasers or Feelings before rolling, so successes are counted correctly.
 
 **GM**
 - As a GM, I want to store ship traits and problem, so the crew has a shared reference.
 - As a GM, I want to prepare an adventure (situation, NPCs, threats) beforehand, so I'm ready to run the session.
+- As a GM, I want to see an overview of all characters and their Numbers, so I can judge the difficulty of rolls.
+- As a GM, I want to keep simple notes during a session, so I can track what has happened so far.
 
 ## Repository
 
