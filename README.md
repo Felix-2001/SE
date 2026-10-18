@@ -50,7 +50,7 @@ Goal: a minimum viable product, a browser app where a player can create a charac
 6. (Done) As a player, I want to be able to choose a style and role for my character, so I can remember them.
 7. (Done) As a player, I want the software to save my information (number, name, style and role), so I can use them in multiple playing sessions.
 8. (Done) As a player, I want to roll dice against my Number and see my successes, so I don't have to count manually.
-9. (Not started) As a player, I want to be notified on a "Laser Feelings" result, so I remember to ask my bonus question.
+9. (In progress) As a player, I want to be notified on a "Laser Feelings" result, so I remember to ask my bonus question.
 
 ## Repository
 
