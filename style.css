@@ -44,6 +44,19 @@ h1 {
 }
 h2 { margin: 0 0 12px; font-size: 1.15rem; }
 
+.field { display: block; margin-bottom: 12px; }
+.field > span { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 4px; }
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid #343a52;
+  border-radius: 8px;
+}
+input:focus, select:focus { outline: 2px solid var(--lasers); outline-offset: 1px; }
+
 button { font: inherit; cursor: pointer; }
 .roll-btn {
   width: 100%;
