@@ -47,8 +47,7 @@ Initial requirements as user stories. Will be edited and extended later.
 
 User stories in priority order (most important first). Stories from the customer (teacher) and my own stories from Assignment 4 are combined into one list.
 
-1. As a GM, I want to see an overview of all characters and their Numbers, so I can judge the difficulty of rolls.
-2. As a GM, I want to prepare an adventure (situation, NPCs, threats) beforehand, so I'm ready to run the session.
+All user stories have been moved to a sprint backlog.
 
 ## Sprint 1 backlog
 
@@ -78,6 +77,8 @@ Goal: a publishable release that also supports the GM: random adventures, the sh
 2. (Done) As a player, I want to see my character's info (Style, Role, Number, gear) during play, so I can reference it quickly.
 3. (Done) As a GM, I want to store ship traits and problem, so the crew has a shared reference.
 4. (Done) As a GM, I want to keep simple notes during a session, so I can track what has happened so far.
+5. (Not started) As a GM, I want to see an overview of all characters and their Numbers, so I can judge the difficulty of rolls.
+6. (Not started) As a GM, I want to prepare an adventure (situation, NPCs, threats) beforehand, so I'm ready to run the session.
 
 ## Application
 
