@@ -115,3 +115,10 @@ textarea { resize: vertical; }
 .crew-table th, .crew-table td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #eee; }
 .crew-table th { font-size: 0.85rem; color: #555; font-weight: 600; }
 .crew-table .empty { color: #888; }
+
+.small-btn {
+  display: block; margin: 10px auto 0;
+  font: inherit; padding: 4px 12px; cursor: pointer;
+  border: 1px solid #bbb; border-radius: 4px; background: #fff;
+}
+.small-btn[hidden] { display: none; }

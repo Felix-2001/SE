@@ -1,4 +1,4 @@
-// GM tools: random adventure
+// GM tools: random adventure, crew overview, ship, adventure preparation, notes
 "use strict";
 
 // --- Switching between the Player and GM views ---
@@ -25,6 +25,7 @@ function rollAdventure() {
   const [threat, wants, target, consequence] = rolls.map((r, i) => ADVENTURE_TABLES[i][r - 1]);
   $("adventure-dice").innerHTML = rolls.map((r) => `<span class="die">${r}</span>`).join("");
   $("adventure").textContent = `${threat} wants to ${wants} ${target}, which will ${consequence}.`;
+  $("use-adventure").hidden = false;
 }
 
 $("adventure-btn").addEventListener("click", rollAdventure);
@@ -134,3 +135,27 @@ $("crew-form").addEventListener("submit", (e) => {
 });
 
 renderCrew();
+
+// --- Adventure preparation: situation, NPCs and threats ---
+const PREP_KEY = "lf-adventure";
+const PREP_FIELDS = ["prep-situation", "prep-npcs", "prep-threats"];
+
+function savePrep() {
+  const data = {};
+  for (const id of PREP_FIELDS) data[id] = $(id).value;
+  try { localStorage.setItem(PREP_KEY, JSON.stringify(data)); } catch (e) { /* storage blocked */ }
+}
+
+try {
+  const data = JSON.parse(localStorage.getItem(PREP_KEY)) || {};
+  for (const id of PREP_FIELDS) $(id).value = data[id] || "";
+} catch (e) { /* nothing saved yet */ }
+
+for (const id of PREP_FIELDS) $(id).addEventListener("input", savePrep);
+
+// Copy the rolled adventure into the situation field.
+$("use-adventure").addEventListener("click", () => {
+  $("prep-situation").value = $("adventure").textContent;
+  savePrep();
+  $("prep-situation").focus();
+});
