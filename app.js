@@ -62,10 +62,41 @@ function roll() {
   $("result").className = "result " + (ok ? "ok" : "bad");
 }
 
+// --- Saving: the character is kept in the browser's localStorage ---
+const STORAGE_KEY = "lf-character";
+const FIELDS = ["name", "style", "role", "number"];
+
+function saveCharacter() {
+  const data = {};
+  for (const f of FIELDS) data[f] = $(f).value;
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    $("save-status").textContent = "Saved in this browser.";
+  } catch (e) {
+    $("save-status").textContent = "Could not save (browser storage is blocked).";
+  }
+}
+
+function loadCharacter() {
+  try {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (!data) return;
+    for (const f of FIELDS) {
+      if (data[f] !== undefined) $(f).value = data[f];
+    }
+    $("save-status").textContent = "Welcome back! Your saved character was loaded.";
+  } catch (e) {
+    // Nothing saved, or storage not available: start with an empty character.
+  }
+}
+
 $("roll-btn").addEventListener("click", roll);
 $("number").addEventListener("change", updateHint);
 $("name").addEventListener("input", updateSummary);
 $("style").addEventListener("change", updateSummary);
 $("role").addEventListener("change", updateSummary);
+for (const f of FIELDS) $(f).addEventListener(f === "name" ? "input" : "change", saveCharacter);
 document.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener("change", updateHint));
+
+loadCharacter();
 updateHint();
