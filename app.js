@@ -42,6 +42,8 @@ function updateSummary() {
   const name = $("name").value.trim() || "Unnamed character";
   const kind = [$("style").value, $("role").value].filter(Boolean).join(" ");
   $("summary").textContent = [name, kind, `Number ${getNumber()}`].filter(Boolean).join(" · ");
+  const gear = $("gear").value.trim();
+  $("gear-line").textContent = gear ? `Gear: ${gear}` : "";
 }
 
 function updateHint() {
@@ -94,7 +96,7 @@ function roll() {
 
 // --- Saving: the character is kept in the browser's localStorage ---
 const STORAGE_KEY = "lf-character";
-const FIELDS = ["name", "style", "role", "number"];
+const FIELDS = ["name", "style", "role", "number", "gear"];
 
 function saveCharacter() {
   const data = {};
@@ -127,7 +129,8 @@ $("number").addEventListener("change", updateHint);
 $("name").addEventListener("input", updateSummary);
 $("style").addEventListener("change", updateSummary);
 $("role").addEventListener("change", updateSummary);
-for (const f of FIELDS) $(f).addEventListener(f === "name" ? "input" : "change", saveCharacter);
+$("gear").addEventListener("input", updateSummary);
+for (const f of FIELDS) $(f).addEventListener(f === "name" || f === "gear" ? "input" : "change", saveCharacter);
 document.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener("change", updateHint));
 
 loadCharacter();

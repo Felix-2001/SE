@@ -75,7 +75,7 @@ Goal: a minimum viable product, a browser app where a player can create a charac
 Goal: a publishable release that also supports the GM: random adventures, the ship, and session notes. The player gets their full character info (including gear) during play. The sprint lasts until Mon 19 Oct, 10am.
 
 1. (Done) As a GM, I want to be able to throw a dice, so I can create a random adventure.
-2. (In progress) As a player, I want to see my character's info (Style, Role, Number, gear) during play, so I can reference it quickly.
+2. (Done) As a player, I want to see my character's info (Style, Role, Number, gear) during play, so I can reference it quickly.
 3. (Not started) As a GM, I want to store ship traits and problem, so the crew has a shared reference.
 4. (Not started) As a GM, I want to keep simple notes during a session, so I can track what has happened so far.
 

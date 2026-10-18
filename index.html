@@ -44,12 +44,17 @@
           <option value="5">5 – best at Lasers</option>
         </select>
       </label>
+      <label class="field">
+        <span>Gear</span>
+        <input id="gear" type="text" maxlength="120" placeholder="e.g. Consortium uniform, communicator, pistol" autocomplete="off">
+      </label>
       <p class="hint" id="save-status">Your character is saved in this browser automatically.</p>
     </section>
 
     <section class="card" id="roll-card">
       <h2>Roll</h2>
       <p class="summary" id="summary"></p>
+      <p class="gear-line" id="gear-line"></p>
       <div class="toggle" role="radiogroup" aria-label="Roll for">
         <label class="lasers"><input type="radio" name="mode" value="lasers" checked><span>Lasers</span></label>
         <label class="feelings"><input type="radio" name="mode" value="feelings"><span>Feelings</span></label>
