@@ -12,12 +12,35 @@ function getNumber() {
   return Number($("number").value);
 }
 
+function getMode() {
+  return document.querySelector('input[name="mode"]:checked').value;
+}
+
+// Lasers (logic, tech): roll UNDER your Number.
+// Feelings (intuition, passion): roll OVER your Number.
+// Rolling your Number exactly also counts as a success.
+function isSuccess(value, number, mode) {
+  if (value === number) return true;
+  return mode === "lasers" ? value < number : value > number;
+}
+
+function updateHint() {
+  const number = getNumber();
+  $("mode-hint").textContent = getMode() === "lasers"
+    ? `Lasers: roll under ${number} to succeed.`
+    : `Feelings: roll over ${number} to succeed.`;
+}
+
 function roll() {
   const value = rollD6();
   const number = getNumber();
-  const compare = value < number ? "under" : value > number ? "over" : "exactly";
-  $("dice").innerHTML = `<span class="die">${value}</span>`;
-  $("result").textContent = `You rolled ${value}, ${compare} your Number ${number}.`;
+  const ok = isSuccess(value, number, getMode());
+  $("dice").innerHTML = `<span class="die ${ok ? "hit" : "miss"}">${value}</span>`;
+  $("result").textContent = ok ? `You rolled ${value}: success!` : `You rolled ${value}: failure.`;
+  $("result").className = "result " + (ok ? "ok" : "bad");
 }
 
 $("roll-btn").addEventListener("click", roll);
+$("number").addEventListener("change", updateHint);
+document.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener("change", updateHint));
+updateHint();
