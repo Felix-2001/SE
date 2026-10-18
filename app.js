@@ -52,14 +52,38 @@ function updateHint() {
     : `Feelings: roll over ${number} to succeed.`;
 }
 
+// 1 die, +1 if prepared, +1 if expert.
+function getDiceCount() {
+  return 1 + ($("prepared").checked ? 1 : 0) + ($("expert").checked ? 1 : 0);
+}
+
+function updateRollButton() {
+  const n = getDiceCount();
+  $("roll-btn").textContent = `Roll ${n} ${n === 1 ? "die" : "dice"}`;
+}
+
+// What the number of successes means, from the rules.
+const OUTCOMES = [
+  "Failure. Things go wrong somehow.",
+  "You barely manage it, with a complication.",
+  "Success! You do it well.",
+  "Critical success! You get an extra effect.",
+];
+
 function roll() {
-  const value = rollD6();
   const number = getNumber();
-  const ok = isSuccess(value, number, getMode());
-  $("dice").innerHTML = `<span class="die ${ok ? "hit" : "miss"}">${value}</span>`;
+  const mode = getMode();
+  const values = Array.from({ length: getDiceCount() }, rollD6);
+  const hits = values.filter((v) => isSuccess(v, number, mode)).length;
+
+  $("dice").innerHTML = values
+    .map((v) => `<span class="die ${isSuccess(v, number, mode) ? "hit" : "miss"}">${v}</span>`)
+    .join("");
+
   const who = $("name").value.trim() || "You";
-  $("result").textContent = ok ? `${who} rolled ${value}: success!` : `${who} rolled ${value}: failure.`;
-  $("result").className = "result " + (ok ? "ok" : "bad");
+  $("result").textContent =
+    `${who}: ${hits} ${hits === 1 ? "success" : "successes"}. ${OUTCOMES[hits]}`;
+  $("result").className = "result " + (hits >= 2 ? "ok" : hits === 1 ? "meh" : "bad");
 }
 
 // --- Saving: the character is kept in the browser's localStorage ---
@@ -91,6 +115,8 @@ function loadCharacter() {
 }
 
 $("roll-btn").addEventListener("click", roll);
+$("prepared").addEventListener("change", updateRollButton);
+$("expert").addEventListener("change", updateRollButton);
 $("number").addEventListener("change", updateHint);
 $("name").addEventListener("input", updateSummary);
 $("style").addEventListener("change", updateSummary);
