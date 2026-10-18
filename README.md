@@ -45,7 +45,7 @@ User stories in priority order (most important first). Stories from the customer
 Goal: a minimum viable product, a browser app where a player can create a character and roll the dice against their Number. Estimated to fit into about 3 x 45 min.
 
 1. (Done) As a GM, I want to be able to use the software in a modern web browser, because they are easy to use and easily available.
-2. (Not started) As a player, I want to be able to throw a dice, because the result of the throw determines if I succeed or not in whatever I am trying to do.
+2. (In progress) As a player, I want to be able to throw a dice, because the result of the throw determines if I succeed or not in whatever I am trying to do.
 3. (Not started) As a player, I want to be able to set my number, so I can compare it with the result of my dice throw.
 4. (Not started) As a player, I want to indicate whether I'm rolling for Lasers or Feelings before rolling, so successes are counted correctly.
 5. (Not started) As a player, I want to be able to give my character a name, because I want to be immersed into the game.
