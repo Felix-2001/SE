@@ -79,3 +79,17 @@ input[type="text"], select {
 
 footer { color: #888; font-size: 0.85rem; text-align: center; margin-top: 8px; }
 footer a { color: #888; }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.tabs button {
+  flex: 1;
+  padding: 8px;
+  font: inherit;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+.tabs button[aria-pressed="true"] { background: #333; border-color: #333; color: #fff; }
+
+.adventure { margin: 12px 0 0; font-size: 1.05rem; text-align: center; }
