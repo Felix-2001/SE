@@ -52,6 +52,12 @@ Goal: a minimum viable product, a browser app where a player can create a charac
 8. (Done) As a player, I want to roll dice against my Number and see my successes, so I don't have to count manually.
 9. (Done) As a player, I want to be notified on a "Laser Feelings" result, so I remember to ask my bonus question.
 
+## Application
+
+Published with GitHub Pages: https://felix-2001.github.io/SE/
+
+Open the link in any modern browser (Chrome, Firefox, Edge, Safari). The character is saved in the browser's local storage, so it is still there on the next visit on the same device.
+
 ## Repository
 
 https://github.com/Felix-2001/SE
