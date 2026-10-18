@@ -103,3 +103,15 @@ footer a { color: #888; }
 .ship-line { margin: 0; }
 
 textarea { resize: vertical; }
+
+.crew-form { display: flex; gap: 8px; margin-bottom: 12px; }
+.crew-form input { flex: 1; }
+.crew-form select { width: auto; }
+.crew-form button, .crew-table button {
+  font: inherit; padding: 4px 10px; cursor: pointer;
+  border: 1px solid #bbb; border-radius: 4px; background: #fff;
+}
+.crew-table { width: 100%; border-collapse: collapse; }
+.crew-table th, .crew-table td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #eee; }
+.crew-table th { font-size: 0.85rem; color: #555; font-weight: 600; }
+.crew-table .empty { color: #888; }

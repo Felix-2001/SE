@@ -92,3 +92,45 @@ try { $("notes").value = localStorage.getItem(NOTES_KEY) || ""; } catch (e) { /*
 $("notes").addEventListener("input", () => {
   try { localStorage.setItem(NOTES_KEY, $("notes").value); } catch (e) { /* storage blocked */ }
 });
+
+// --- Crew overview: the GM adds each character's name and Number ---
+const CREW_KEY = "lf-crew";
+let crew = [];
+try { crew = JSON.parse(localStorage.getItem(CREW_KEY)) || []; } catch (e) { crew = []; }
+
+function saveCrew() {
+  try { localStorage.setItem(CREW_KEY, JSON.stringify(crew)); } catch (e) { /* storage blocked */ }
+}
+
+function renderCrew() {
+  const list = $("crew-list");
+  list.innerHTML = "";
+  if (crew.length === 0) {
+    list.innerHTML = '<tr><td colspan="5" class="empty">No characters added yet.</td></tr>';
+    return;
+  }
+  crew.forEach((c, i) => {
+    // With one die: Lasers succeeds on 1..Number, Feelings on Number..6.
+    const cells = [c.name, c.number, `${c.number}/6`, `${7 - c.number}/6`];
+    const row = list.insertRow();
+    for (const text of cells) row.insertCell().textContent = text;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = "Remove";
+    btn.addEventListener("click", () => { crew.splice(i, 1); saveCrew(); renderCrew(); });
+    row.insertCell().append(btn);
+  });
+}
+
+$("crew-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = $("crew-name").value.trim();
+  if (!name) return;
+  crew.push({ name, number: Number($("crew-number").value) });
+  saveCrew();
+  renderCrew();
+  $("crew-name").value = "";
+  $("crew-name").focus();
+});
+
+renderCrew();

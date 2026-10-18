@@ -89,6 +89,22 @@
       <p id="adventure" class="adventure"></p>
     </section>
 
+    <section class="card" id="crew-card">
+      <h2>Crew overview</h2>
+      <form id="crew-form" class="crew-form">
+        <input id="crew-name" type="text" maxlength="40" placeholder="Character name" required autocomplete="off">
+        <select id="crew-number" aria-label="Number">
+          <option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+      <table class="crew-table">
+        <thead><tr><th>Name</th><th>Number</th><th>Lasers</th><th>Feelings</th><th></th></tr></thead>
+        <tbody id="crew-list"></tbody>
+      </table>
+      <p class="hint">Lasers/Feelings show the chance to succeed with one die.</p>
+    </section>
+
     <section class="card" id="ship-card">
       <h2>Ship</h2>
       <label class="field">
