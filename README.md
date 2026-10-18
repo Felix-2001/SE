@@ -31,14 +31,12 @@ This README is a first draft and will be extended as the project progresses.
 
 User stories in priority order (most important first). Stories from the customer (teacher) and my own stories from Assignment 4 are combined into one list.
 
-1. As a player, I want to roll dice against my Number and see my successes, so I don't have to count manually.
-2. As a player, I want to be notified on a "Laser Feelings" result, so I remember to ask my bonus question.
-3. As a player, I want to see my character's info (Style, Role, Number, gear) during play, so I can reference it quickly.
-4. As a GM, I want to be able to throw a dice, so I can create a random adventure.
-5. As a GM, I want to see an overview of all characters and their Numbers, so I can judge the difficulty of rolls.
-6. As a GM, I want to store ship traits and problem, so the crew has a shared reference.
-7. As a GM, I want to prepare an adventure (situation, NPCs, threats) beforehand, so I'm ready to run the session.
-8. As a GM, I want to keep simple notes during a session, so I can track what has happened so far.
+1. As a player, I want to see my character's info (Style, Role, Number, gear) during play, so I can reference it quickly.
+2. As a GM, I want to be able to throw a dice, so I can create a random adventure.
+3. As a GM, I want to see an overview of all characters and their Numbers, so I can judge the difficulty of rolls.
+4. As a GM, I want to store ship traits and problem, so the crew has a shared reference.
+5. As a GM, I want to prepare an adventure (situation, NPCs, threats) beforehand, so I'm ready to run the session.
+6. As a GM, I want to keep simple notes during a session, so I can track what has happened so far.
 
 ## Sprint 1 backlog
 
@@ -51,6 +49,8 @@ Goal: a minimum viable product, a browser app where a player can create a charac
 5. (Done) As a player, I want to be able to give my character a name, because I want to be immersed into the game.
 6. (Done) As a player, I want to be able to choose a style and role for my character, so I can remember them.
 7. (Done) As a player, I want the software to save my information (number, name, style and role), so I can use them in multiple playing sessions.
+8. (Not started) As a player, I want to roll dice against my Number and see my successes, so I don't have to count manually.
+9. (Not started) As a player, I want to be notified on a "Laser Feelings" result, so I remember to ask my bonus question.
 
 ## Repository
 
