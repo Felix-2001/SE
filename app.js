@@ -36,7 +36,8 @@ function roll() {
   const number = getNumber();
   const ok = isSuccess(value, number, getMode());
   $("dice").innerHTML = `<span class="die ${ok ? "hit" : "miss"}">${value}</span>`;
-  $("result").textContent = ok ? `You rolled ${value}: success!` : `You rolled ${value}: failure.`;
+  const who = $("name").value.trim() || "You";
+  $("result").textContent = ok ? `${who} rolled ${value}: success!` : `${who} rolled ${value}: failure.`;
   $("result").className = "result " + (ok ? "ok" : "bad");
 }
 
