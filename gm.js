@@ -28,3 +28,60 @@ function rollAdventure() {
 }
 
 $("adventure-btn").addEventListener("click", rollAdventure);
+
+// --- Ship: strengths and problem from the rules, saved in the browser ---
+const SHIP_STRENGTHS = ["Fast", "Nimble", "Well-Armed", "Powerful Shields", "Superior Sensors", "Cloaking Device", "Fightercraft"];
+const SHIP_PROBLEMS = ["Fuel Hog", "Only One Medical Pod", "Horrible Circuit Breakers", "Grim Reputation"];
+const SHIP_KEY = "lf-ship";
+
+for (const s of SHIP_STRENGTHS) {
+  const label = document.createElement("label");
+  label.innerHTML = `<input type="checkbox" value="${s}"> ${s}`;
+  $("ship-strengths").append(label);
+}
+fillSelect($("ship-problem"), SHIP_PROBLEMS);
+
+const strengthBoxes = () => [...document.querySelectorAll("#ship-strengths input")];
+
+function getShip() {
+  return {
+    name: $("ship-name").value.trim(),
+    strengths: strengthBoxes().filter((b) => b.checked).map((b) => b.value),
+    problem: $("ship-problem").value,
+  };
+}
+
+function updateShip() {
+  const ship = getShip();
+  // Only 2 strengths can be chosen: disable the rest when 2 are checked.
+  for (const b of strengthBoxes()) b.disabled = !b.checked && ship.strengths.length >= 2;
+
+  const parts = [ship.name || "Unnamed ship"];
+  if (ship.strengths.length) parts.push(ship.strengths.join(", "));
+  if (ship.problem) parts.push(`Problem: ${ship.problem}`);
+  const text = parts.join(" · ");
+  $("ship-line").textContent = text;
+  $("ship-line-player").textContent = text;
+}
+
+function saveShip() {
+  updateShip();
+  try { localStorage.setItem(SHIP_KEY, JSON.stringify(getShip())); } catch (e) { /* storage blocked */ }
+}
+
+function loadShip() {
+  try {
+    const ship = JSON.parse(localStorage.getItem(SHIP_KEY));
+    if (ship) {
+      $("ship-name").value = ship.name || "";
+      for (const b of strengthBoxes()) b.checked = (ship.strengths || []).includes(b.value);
+      $("ship-problem").value = ship.problem || "";
+    }
+  } catch (e) { /* nothing saved yet */ }
+  updateShip();
+}
+
+$("ship-name").addEventListener("input", saveShip);
+$("ship-problem").addEventListener("change", saveShip);
+$("ship-strengths").addEventListener("change", saveShip);
+loadShip();

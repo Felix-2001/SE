@@ -96,3 +96,8 @@ footer a { color: #888; }
 
 .gear-line { margin: -6px 0 8px; color: #555; font-size: 0.9rem; }
 .gear-line:empty { display: none; }
+
+.checks { border: 0; padding: 0; margin: 0 0 12px; }
+.checks legend { font-size: 0.9rem; color: #555; margin-bottom: 4px; padding: 0; }
+.checks label { display: inline-block; margin: 2px 16px 2px 0; cursor: pointer; }
+.ship-line { margin: 0; }

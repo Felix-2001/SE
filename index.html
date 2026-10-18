@@ -73,6 +73,11 @@
         Then you may change your action if you want, and roll again.
       </div>
     </section>
+
+    <section class="card" id="ship-info">
+      <h2>Ship</h2>
+      <p class="ship-line" id="ship-line-player"></p>
+    </section>
    </div>
 
    <div id="gm-view" hidden>
@@ -82,6 +87,22 @@
       <button id="adventure-btn" class="roll-btn">Roll adventure</button>
       <div id="adventure-dice" class="dice small"></div>
       <p id="adventure" class="adventure"></p>
+    </section>
+
+    <section class="card" id="ship-card">
+      <h2>Ship</h2>
+      <label class="field">
+        <span>Name</span>
+        <input id="ship-name" type="text" maxlength="40" value="The Raptor" autocomplete="off">
+      </label>
+      <fieldset class="field checks" id="ship-strengths">
+        <legend>Strengths (choose 2)</legend>
+      </fieldset>
+      <label class="field">
+        <span>Problem (choose 1)</span>
+        <select id="ship-problem"><option value="">Choose…</option></select>
+      </label>
+      <p class="ship-line" id="ship-line"></p>
     </section>
    </div>
   </main>
