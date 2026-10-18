@@ -85,3 +85,10 @@ $("ship-name").addEventListener("input", saveShip);
 $("ship-problem").addEventListener("change", saveShip);
 $("ship-strengths").addEventListener("change", saveShip);
 loadShip();
+
+// --- Session notes, saved in the browser while typing ---
+const NOTES_KEY = "lf-notes";
+try { $("notes").value = localStorage.getItem(NOTES_KEY) || ""; } catch (e) { /* storage blocked */ }
+$("notes").addEventListener("input", () => {
+  try { localStorage.setItem(NOTES_KEY, $("notes").value); } catch (e) { /* storage blocked */ }
+});

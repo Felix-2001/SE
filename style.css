@@ -23,7 +23,7 @@ h2 { font-size: 1.1rem; margin: 0 0 12px; }
 .field > span { display: block; font-size: 0.9rem; color: #555; margin-bottom: 2px; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-input[type="text"], select {
+input[type="text"], select, textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 6px 8px;
@@ -101,3 +101,5 @@ footer a { color: #888; }
 .checks legend { font-size: 0.9rem; color: #555; margin-bottom: 4px; padding: 0; }
 .checks label { display: inline-block; margin: 2px 16px 2px 0; cursor: pointer; }
 .ship-line { margin: 0; }
+
+textarea { resize: vertical; }
