@@ -86,3 +86,8 @@ Published with GitHub Pages: https://felix-2001.github.io/SE/
 
 Open the link in any modern browser (Chrome, Firefox, Edge, Safari). The character is saved in the browser's local storage, so it is still there on the next visit on the same device.
 
+The app has two tabs:
+
+- **Player:** character (name, style, role, Number, gear) and dice rolls for Lasers or Feelings.
+- **GM:** random adventure, adventure preparation, crew overview, ship, and session notes.
+

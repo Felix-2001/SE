@@ -122,3 +122,5 @@ textarea { resize: vertical; }
   border: 1px solid #bbb; border-radius: 4px; background: #fff;
 }
 .small-btn[hidden] { display: none; }
+
+#adventure-dice:empty, .adventure:empty { display: none; }
