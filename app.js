@@ -77,8 +77,14 @@ function roll() {
   const hits = values.filter((v) => isSuccess(v, number, mode)).length;
 
   $("dice").innerHTML = values
-    .map((v) => `<span class="die ${isSuccess(v, number, mode) ? "hit" : "miss"}">${v}</span>`)
+    .map((v) => {
+      const cls = v === number ? "hit exact" : isSuccess(v, number, mode) ? "hit" : "miss";
+      return `<span class="die ${cls}">${v}</span>`;
+    })
     .join("");
+
+  // Laser Feelings: at least one die shows the Number exactly.
+  $("laser-feelings").hidden = !values.includes(number);
 
   const who = $("name").value.trim() || "You";
   $("result").textContent =

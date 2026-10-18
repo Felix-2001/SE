@@ -87,6 +87,21 @@ button { font: inherit; cursor: pointer; }
 .result.bad { color: var(--bad); }
 .result.meh { color: #ffd54f; }
 
+.die.exact { background: linear-gradient(135deg, var(--lasers), var(--feelings)); box-shadow: none; }
+.laser-feelings {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 2px solid var(--feelings);
+  background: rgba(240, 98, 146, 0.12);
+}
+.laser-feelings strong {
+  display: block;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--feelings);
+}
+
 .extras { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 14px; }
 .extras label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
 .extras input { width: 18px; height: 18px; accent-color: var(--lasers); }
