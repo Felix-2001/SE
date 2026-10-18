@@ -27,21 +27,30 @@ This README is a first draft and will be extended as the project progresses.
 | **Adventure** | The scenario the GM prepares and runs. |
 | **User story** | "As a [role], I want [goal], so that [reason]." |
 
-## Requirements
+## Product backlog
 
-Initial requirements as user stories. Will be edited and extended later.
+User stories in priority order (most important first). Stories from the customer (teacher) and my own stories from Assignment 4 are combined into one list.
 
-**Player**
-- As a player, I want to roll dice against my Number and see my successes, so I don't have to count manually.
-- As a player, I want to be notified on a "Laser Feelings" result, so I remember to ask my bonus question.
-- As a player, I want to see my character's info (Style, Role, Number, gear) during play, so I can reference it quickly.
-- As a player, I want to indicate whether I'm rolling for Lasers or Feelings before rolling, so successes are counted correctly.
+1. As a player, I want to roll dice against my Number and see my successes, so I don't have to count manually.
+2. As a player, I want to be notified on a "Laser Feelings" result, so I remember to ask my bonus question.
+3. As a player, I want to see my character's info (Style, Role, Number, gear) during play, so I can reference it quickly.
+4. As a GM, I want to be able to throw a dice, so I can create a random adventure.
+5. As a GM, I want to see an overview of all characters and their Numbers, so I can judge the difficulty of rolls.
+6. As a GM, I want to store ship traits and problem, so the crew has a shared reference.
+7. As a GM, I want to prepare an adventure (situation, NPCs, threats) beforehand, so I'm ready to run the session.
+8. As a GM, I want to keep simple notes during a session, so I can track what has happened so far.
 
-**GM**
-- As a GM, I want to store ship traits and problem, so the crew has a shared reference.
-- As a GM, I want to prepare an adventure (situation, NPCs, threats) beforehand, so I'm ready to run the session.
-- As a GM, I want to see an overview of all characters and their Numbers, so I can judge the difficulty of rolls.
-- As a GM, I want to keep simple notes during a session, so I can track what has happened so far.
+## Sprint 1 backlog
+
+Goal: a minimum viable product, a browser app where a player can create a character and roll the dice against their Number. Estimated to fit into about 3 x 45 min.
+
+1. (Not started) As a GM, I want to be able to use the software in a modern web browser, because they are easy to use and easily available.
+2. (Not started) As a player, I want to be able to throw a dice, because the result of the throw determines if I succeed or not in whatever I am trying to do.
+3. (Not started) As a player, I want to be able to set my number, so I can compare it with the result of my dice throw.
+4. (Not started) As a player, I want to indicate whether I'm rolling for Lasers or Feelings before rolling, so successes are counted correctly.
+5. (Not started) As a player, I want to be able to give my character a name, because I want to be immersed into the game.
+6. (Not started) As a player, I want to be able to choose a style and role for my character, so I can remember them.
+7. (Not started) As a player, I want the software to save my information (number, name, style and role), so I can use them in multiple playing sessions.
 
 ## Repository
 
