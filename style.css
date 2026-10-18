@@ -45,6 +45,7 @@ h1 {
 h2 { margin: 0 0 12px; font-size: 1.15rem; }
 
 .field { display: block; margin-bottom: 12px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .field > span { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 4px; }
 input, select {
   width: 100%;
@@ -97,6 +98,7 @@ button { font: inherit; cursor: pointer; }
 .toggle .lasers input:checked + span { background: var(--lasers); border-color: var(--lasers); color: var(--bg); }
 .toggle .feelings input:checked + span { background: var(--feelings); border-color: var(--feelings); color: var(--bg); }
 .toggle input:focus-visible + span { outline: 2px solid var(--text); outline-offset: 2px; }
+.summary { margin: -4px 0 12px; font-weight: 600; }
 .hint { color: var(--muted); font-size: 0.9rem; margin: 8px 0 12px; }
 
 footer { color: var(--muted); font-size: 0.85rem; text-align: center; padding-bottom: 32px; }

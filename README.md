@@ -49,7 +49,7 @@ Goal: a minimum viable product, a browser app where a player can create a charac
 3. (Done) As a player, I want to be able to set my number, so I can compare it with the result of my dice throw.
 4. (Done) As a player, I want to indicate whether I'm rolling for Lasers or Feelings before rolling, so successes are counted correctly.
 5. (Done) As a player, I want to be able to give my character a name, because I want to be immersed into the game.
-6. (In progress) As a player, I want to be able to choose a style and role for my character, so I can remember them.
+6. (Done) As a player, I want to be able to choose a style and role for my character, so I can remember them.
 7. (Not started) As a player, I want the software to save my information (number, name, style and role), so I can use them in multiple playing sessions.
 
 ## Repository

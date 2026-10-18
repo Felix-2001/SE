@@ -3,6 +3,19 @@
 
 const $ = (id) => document.getElementById(id);
 
+// Choices from the Lasers & Feelings rules.
+const STYLES = ["Alien", "Android", "Dangerous", "Heroic", "Hot-Shot", "Intrepid", "Savvy"];
+const ROLES = ["Doctor", "Envoy", "Engineer", "Explorer", "Pilot", "Scientist", "Soldier"];
+
+function fillSelect(select, options) {
+  for (const text of options) {
+    select.add(new Option(text, text));
+  }
+}
+
+fillSelect($("style"), STYLES);
+fillSelect($("role"), ROLES);
+
 // Returns a random whole number from 1 to 6.
 function rollD6() {
   return Math.floor(Math.random() * 6) + 1;
@@ -24,7 +37,15 @@ function isSuccess(value, number, mode) {
   return mode === "lasers" ? value < number : value > number;
 }
 
+// Short reminder of the character, e.g. "Captain Nova · Heroic Pilot · Number 4".
+function updateSummary() {
+  const name = $("name").value.trim() || "Unnamed character";
+  const kind = [$("style").value, $("role").value].filter(Boolean).join(" ");
+  $("summary").textContent = [name, kind, `Number ${getNumber()}`].filter(Boolean).join(" · ");
+}
+
 function updateHint() {
+  updateSummary();
   const number = getNumber();
   $("mode-hint").textContent = getMode() === "lasers"
     ? `Lasers: roll under ${number} to succeed.`
@@ -43,5 +64,8 @@ function roll() {
 
 $("roll-btn").addEventListener("click", roll);
 $("number").addEventListener("change", updateHint);
+$("name").addEventListener("input", updateSummary);
+$("style").addEventListener("change", updateSummary);
+$("role").addEventListener("change", updateSummary);
 document.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener("change", updateHint));
 updateHint();
