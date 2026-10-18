@@ -77,7 +77,7 @@ Goal: a publishable release that also supports the GM: random adventures, the sh
 2. (Done) As a player, I want to see my character's info (Style, Role, Number, gear) during play, so I can reference it quickly.
 3. (Done) As a GM, I want to store ship traits and problem, so the crew has a shared reference.
 4. (Done) As a GM, I want to keep simple notes during a session, so I can track what has happened so far.
-5. (Not started) As a GM, I want to see an overview of all characters and their Numbers, so I can judge the difficulty of rolls.
+5. (In progress) As a GM, I want to see an overview of all characters and their Numbers, so I can judge the difficulty of rolls.
 6. (Not started) As a GM, I want to prepare an adventure (situation, NPCs, threats) beforehand, so I'm ready to run the session.
 
 ## Application
